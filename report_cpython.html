@@ -1,0 +1,159 @@
+<html>
+    <head>
+    <title>Jacek Cierkosz - Multithreading/Multiprocessing
+    benchmark results</title>
+    <style>
+    
+    #snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1000;
+    }
+    
+    body {
+      font-size: 10pt;
+    }
+
+    h2 {
+      padding-top: 10pt;
+    }
+
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      table-layout: fixed ;
+    }
+
+    td, th {
+      border: 2px solid #b9b9b9;
+      padding: 10px;
+      text-align: center;
+      width: 25% ;
+    }
+
+    th {
+      background-color: #d5d5d5;
+    }
+
+    td {
+    }
+
+    tr:nth-child(odd) {
+      background-color: #e5e5e5;
+    }
+    tr:nth-child(even) {
+      background-color: #b0b0b0;
+    }
+
+    </style>
+    <div id="snowflakeContainer">
+        <span class="snowflake"></span>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+        var script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+        script.onload = function(){
+            particlesJS("snow", {
+                "particles": {
+                    "number": {
+                        "value": 200,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "opacity": {
+                        "value": 0.7,
+                        "random": false,
+                        "anim": {
+                            "enable": false
+                        }
+                    },
+                    "size": {
+                        "value": 5,
+                        "random": true,
+                        "anim": {
+                            "enable": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": false
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 5,
+                        "direction": "bottom",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": true,
+                            "rotateX": 300,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "events": {
+                        "onhover": {
+                            "enable": false
+                        },
+                        "onclick": {
+                            "enable": false
+                        },
+                        "resize": false
+                    }
+                },
+                "retina_detect": true
+            });
+        }
+        document.head.append(script);
+    });
+    </script>
+    </head>
+    <body bgcolor=black>
+    <div id="snow"></div>
+    <font color = silver>
+
+    <h1><marquee>Multithreading/Multiprocessing
+     benchmark results</marquee></h1>
+    <p>
+    </p>
+
+    <h2>Œrodowisko testowe:</h2>
+    <p>
+Wersja Pythona:3.9.1<br>Nazwa interpretera: CPython<br>Wersja interpretera: 3.9.1 (tags/v3.9.1:1e5d33e, Dec  7 2020, 17:08:21) [MSC v.1927 64 bit (AMD64)]<br>System operacyjny: Windows<br>Wersja systemu operacyjnego: 10<br>Rodzaj procesora: AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD<br>Liczba rdzeni procesora: 12
+<h2>Wyniki testu:</h2>
+<img src = "hams.gif" width="216" height="72" />
+<p>Poni¿sza tabela zawiera wyniki testu:</p>
+<table>
+  <tr>
+    <th>Które wykonanie:</th>
+    <th>1&nbsp;w¹tek</th>
+    <th>4&nbsp;w¹tki</th>
+    <th>4&nbsp;procesy</th>
+    <th>Wszystkie dostêpne procesy:</th>
+  </tr>
+<tr><td>1</td><td> 68.417</td><td> 68.970</td><td> 22.492</td><td> 13.514</td></tr><tr><td>2</td><td> 69.421</td><td> 69.371</td><td> 21.381</td><td> 13.577</td></tr><tr><td>3</td><td> 68.651</td><td> 70.180</td><td> 21.208</td><td> 13.410</td></tr><tr><td>4</td><td> 69.089</td><td> 69.579</td><td> 21.629</td><td> 13.545</td></tr><tr><td>5</td><td> 68.603</td><td> 70.174</td><td> 21.365</td><td> 13.722</td></tr></table><h2>Podsumowanie:</h2>
+<p>Poni¿sza tabela zawiera zestawienie median z rezultatów badania:</p>
+<table>
+    <tr>
+        <th>Wykonanie:</th>
+        <th>1&nbsp;w¹tek</th>
+        <th>4&nbsp;w¹tki</th>
+        <th>4&nbsp;procesy</th>
+        <th>Wszystkie dostêpne procesy:</th>
+    </tr>
+<tr><td>Mediana:</td><td>68.651</td><td>69.579</td><td>21.381</td><td>13.545</td></tr></table>
+<p>Autor aplikacji: Jacek Cierkosz</p>
+</body></html>
